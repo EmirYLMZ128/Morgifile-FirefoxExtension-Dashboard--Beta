@@ -59,11 +59,19 @@ The project consists of a Firefox extension, a locally running Python server, an
 
 This project is currently in the **Beta** stage.
 
+<<<<<<< HEAD
 - Core features are functional
 - The application is actively usable
 - However:
   - Some features are still missing
   - The code structure is open for further improvement
+=======
+- Temel özellikler çalışmaktadır
+- Aktif olarak kullanılabilmektedir
+- Ancak:
+  - Eksik özellikler bulunmaktadır
+  - Kod yapısı geliştirilmeye açıktır!
+>>>>>>> 38ec268c150d5819dfe8ae0b4b8651cc8b3c65c3
 
 The project is under continuous development.
 
@@ -71,21 +79,40 @@ The project is under continuous development.
 
 ## 🗺 Roadmap (Planned)
 
+<<<<<<< HEAD
 - Prompt generator
 - Color palette generator
 - Performance optimizations
 - Data structure improvements
 - Support for additional platforms
 - UI/UX enhancements
+=======
+- Prompt üretici
+- Renk paleti oluşturucu
+- Performans optimizasyonları
+- Veri yapısının iyileştirilmesi
+- Farklı platformlar için destek
+- UI/UX geliştirmeleri
+>>>>>>> 38ec268c150d5819dfe8ae0b4b8651cc8b3c65c3
 
 ---
 
 ## 🤖 Note
 
+<<<<<<< HEAD
 This project has been developed **entirely with the assistance of artificial intelligence** so far.
 
 ---
 
 ## 📄 License
+=======
+Bu program **şu ana kadar tamamen yapay zeka yardımı ile geliştirilmiştir**.
+
+---
+
+## 📄 Lisans
+
+Bu proje kişisel geliştirme amaçlıdır.
+>>>>>>> 38ec268c150d5819dfe8ae0b4b8651cc8b3c65c3
 
 This project is intended for personal and non-commercial development purposes.
