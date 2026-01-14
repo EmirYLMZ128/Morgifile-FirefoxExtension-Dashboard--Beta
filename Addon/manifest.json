@@ -1,0 +1,43 @@
+{
+  "manifest_version": 2,
+  "name": "MorgiFile",
+  "description": "Görselleri kolayca kaydet ve kategorize et.",
+  "version": "1.0",
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+
+  "permissions": [
+    "contextMenus",
+    "activeTab",
+    "<all_urls>",
+    "storage"
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "browser_action": {
+    "default_icon": "icons/icon48.png",
+    "default_popup": "Popup/popup.html",
+    "default_title": "MorgiFile"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "morgifile@example.com"
+    }
+  }
+}

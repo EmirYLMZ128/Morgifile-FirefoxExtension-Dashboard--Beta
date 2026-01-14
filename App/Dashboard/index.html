@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morgi Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="logo"><i class="fas fa-folder-open"></i> Morgi</div>
+            
+            <nav class="nav-menu">
+                <div class="nav-section">Genel</div>
+                <div class="nav-item active" id="nav-all"><i class="fas fa-th-large"></i> Tüm Görseller</div>
+                <div class="nav-item" id="nav-fav"><i class="fas fa-star"></i> Favoriler</div>
+                <div class="nav-item" id="nav-trash"><i class="fas fa-trash-alt"></i> Geri Dönüşüm</div>
+                <div class="nav-section">Kategoriler</div>
+                <div id="sidebar-categories">
+                </div>
+            </nav>
+
+            <button id="open-category-modal" class="btn-manage">
+                <i class="fas fa-sliders-h"></i> Kategorileri Düzenle
+            </button>
+        </aside>
+
+        <main class="content">
+            <header class="top-header">
+                <div class="header-left">
+                    <div class="current-category-info" id="active-category-display">
+                        <span id="active-category-name">Tüm Görseller</span>
+                    </div>
+                </div>
+                <div class="header-right"></div>
+            </header>
+
+            <main class="gallery-container">
+                <div class="image-grid">
+                    </div>
+            </main>
+        </main>
+    </div>
+
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3>Kategorileri Yönet</h3>
+                <button class="close-modal" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="add-cat-form">
+                    <input type="text" id="new-cat-name" placeholder="Yeni kategori adı...">
+                    <button class="btn-primary" id="create-cat-btn">Ekle</button>
+                </div>
+                <div id="manage-cat-list" class="manage-cat-list">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+<div id="image-detail-modal" class="detail-modal-overlay" onclick="closeDetailModal(event)">
+    <div class="detail-modal-container" onclick="event.stopPropagation()">
+        <div class="detail-left">
+            <img id="detail-img" src="" alt="Görsel Detayı">
+        </div>
+
+        <div class="detail-right">
+            <div class="detail-info-group">
+                <h3>Görsel Bilgileri</h3>
+                
+                <div class="info-item">
+                    <span class="info-label">Site:</span>
+                    <span id="info-site" class="info-value">---</span>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-label">URL:</span>
+                    <a id="info-url" href="#" target="_blank" class="info-link">Kaynağa Git <i class="fas fa-external-link-alt"></i></a>
+                </div>
+                
+                <div class="info-item">
+                    <span class="info-label">Kategori:</span>
+                    <span id="info-category" class="info-value">---</span>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-label">Boyut:</span>
+                    <span id="info-size" class="info-value">---</span>
+                </div>
+
+                <hr class="detail-divider">
+
+                <div class="ai-section">
+                    <div class="info-label">Prompt:</div>
+                    <div id="prompt-btn" class="ai-content">
+                        </div>
+                </div>
+
+                <div class="ai-section">
+                    <div class="info-label">Color Palette:</div>
+                    <div id="palette-btn" class="ai-content">
+                        </div>
+                </div>
+            </div>
+
+            <div class="action-btn-list">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

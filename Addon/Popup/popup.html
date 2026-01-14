@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      width: 250px;
+      background: #121212;
+      color: white;
+      font-family: sans-serif;
+      padding: 15px;
+      margin: 0;
+    }
+    .title {
+      text-align: center;
+      font-size: 14px;
+      color: #bbb;
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+    .hostname {
+      color: #6366f1;
+      font-weight: bold;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn-deactive {
+      background: #cf6679;
+      color: white;
+    }
+    .btn-active {
+      background: #03dac6;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="title" id="status-text">
+    MorgiFile <span id="site-name" class="hostname">...</span> sitesinde aktiftir.
+  </div>
+  <button id="toggle-btn" class="btn-deactive">Bu sitede deaktif et</button>
+  <script src="popup.js"></script>
+</body>
+</html>
