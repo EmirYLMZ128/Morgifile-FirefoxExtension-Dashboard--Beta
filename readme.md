@@ -61,8 +61,7 @@ Bu proje şu anda **Beta** aşamasındadır.
 - Aktif olarak kullanılabilmektedir
 - Ancak:
   - Eksik özellikler bulunmaktadır
-  - UI/UX iyileştirmeleri gereklidir
-  - Kod yapısı geliştirilmeye açıktır
+  - Kod yapısı geliştirilmeye açıktır!
 
 Proje sürekli olarak geliştirilmektedir.
 
@@ -70,21 +69,22 @@ Proje sürekli olarak geliştirilmektedir.
 
 ## 🗺 Roadmap (Planlanan)
 
-- Daha gelişmiş kategori yönetimi
-- Farklı platformlar için destek
-- Veri yapısının iyileştirilmesi
-- UI/UX geliştirmeleri
+- Prompt üretici
+- Renk paleti oluşturucu
 - Performans optimizasyonları
+- Veri yapısının iyileştirilmesi
+- Farklı platformlar için destek
+- UI/UX geliştirmeleri
 
 ---
 
 ## 🤖 Not
 
-Bu program şu ana kadar **tamamen yapay zeka yardımı ile geliştirilmiştir**.
+Bu program **şu ana kadar tamamen yapay zeka yardımı ile geliştirilmiştir**.
 
 ---
 
 ## 📄 Lisans
 
-Bu proje kişisel geliştirme amaçlıdır. Lisans bilgisi ilerleyen sürümlerde eklenecektir.
+Bu proje kişisel geliştirme amaçlıdır.
 
