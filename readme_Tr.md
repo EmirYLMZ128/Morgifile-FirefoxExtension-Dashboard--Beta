@@ -1,6 +1,6 @@
 # Morifile (Beta)
 
-[🇬🇧 English README](README.md)
+[🇬🇧 English README](readme.md)
 
 Morifile, web üzerindeki görselleri hızlı ve pratik bir şekilde arşivlemek, kategorize etmek ve yönetmek için geliştirilmiş **Firefox eklentisi + web dashboard** tabanlı bir uygulamadır.
 
