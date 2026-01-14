@@ -1,6 +1,6 @@
 # Morifile (Beta)
 
-[🇹🇷 Türkçe README](README_TR.md)
+[🇹🇷 Türkçe README](readme_Tr.md)
 
 Morifile is a **Firefox extension + web dashboard** application developed to quickly and efficiently archive, categorize, and manage images from the web.
 
@@ -66,6 +66,18 @@ This project is currently in the **Beta** stage.
   - The code structure is open for further improvement
 
 The project is under continuous development.
+
+---
+
+## 🤝 Contributing
+
+Morifile is an open-source, non-commercial project.
+Contributors are welcome to help improve features, UI/UX, and code quality.
+
+If you want to contribute:
+- Fork the repository
+- Pick an issue labeled `good first issue`
+- Open a pull request
 
 ---
 
