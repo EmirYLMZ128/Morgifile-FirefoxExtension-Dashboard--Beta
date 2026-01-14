@@ -1,38 +1,40 @@
 # Morifile (Beta)
 
-Morifile, web üzerindeki görselleri hızlı ve pratik bir şekilde arşivlemek, kategorize etmek ve yönetmek için geliştirilmiş **Firefox eklentisi + web dashboard** tabanlı bir uygulamadır.
+[🇹🇷 Türkçe README](README_TR.md)
 
-Proje; bir Firefox eklentisi, yerel çalışan bir Python server ve bu verileri görselleştiren bir dashboard yapısından oluşur.
+Morifile is a **Firefox extension + web dashboard** application developed to quickly and efficiently archive, categorize, and manage images from the web.
 
----
-
-## 🚀 Özellikler
-
-- Firefox üzerinden herhangi bir web sitesindeki görsele **sağ tıklayarak kaydetme**
-- Görsellerin **Python local server** aracılığıyla işlenmesi
-- Verilerin **JSON formatında** saklanması
-- Dashboard üzerinden:
-  - Kategoriler halinde görsel listeleme
-  - Kategori ekleme / düzenleme / silme
-  - Görsel silme
-- Basit, merkezi ve kontrol edilebilir bir görsel arşiv sistemi
+The project consists of a Firefox extension, a locally running Python server, and a dashboard interface that visualizes and manages the collected data.
 
 ---
 
-## 🧩 Proje Yapısı
+## 🚀 Features
+
+- Save images from any website via **right-click** using Firefox
+- Process images through a **local Python server**
+- Store data in **JSON format**
+- Dashboard features:
+  - Display images grouped by categories
+  - Create / edit / delete categories
+  - Delete images
+- A simple, centralized, and controllable image archiving system
+
+---
+
+## 🧩 Project Structure
 
 - **Firefox Extension**  
-  Web sayfalarındaki görselleri algılar ve seçilen görseli backend'e gönderir.
+  Detects images on web pages and sends the selected image to the backend.
 
 - **Python Local Server**  
-  Eklentiden gelen verileri alır, işler ve JSON veri yapısına kaydeder.
+  Receives data from the extension, processes it, and stores it in a JSON-based data structure.
 
 - **Dashboard (Web UI)**  
-  Kaydedilen görselleri kategoriler halinde kullanıcıya sunar ve yönetim imkânı sağlar.
+  Displays saved images by category and provides management functionality.
 
 ---
 
-## 🛠 Kullanılan Teknolojiler
+## 🛠 Technologies Used
 
 - JavaScript
 - HTML
@@ -42,49 +44,48 @@ Proje; bir Firefox eklentisi, yerel çalışan bir Python server ve bu verileri 
 
 ---
 
-## ⚙️ Kurulum (Özet)
+## ⚙️ Installation (Overview)
 
-> Detaylı kurulum adımları ilerleyen sürümlerde eklenecektir.
+> Detailed installation steps will be added in future versions.
 
-1. Python local server'ı çalıştırın
-2. Firefox eklentisini tarayıcıya yükleyin
-3. Dashboard arayüzünü tarayıcıdan açın
-4. Web sitelerinde görsellere sağ tıklayarak arşivlemeye başlayın
-
----
-
-## 📌 Proje Durumu
-
-Bu proje şu anda **Beta** aşamasındadır.
-
-- Temel özellikler çalışmaktadır
-- Aktif olarak kullanılabilmektedir
-- Ancak:
-  - Eksik özellikler bulunmaktadır
-  - UI/UX iyileştirmeleri gereklidir
-  - Kod yapısı geliştirilmeye açıktır
-
-Proje sürekli olarak geliştirilmektedir.
+1. Run the Python local server
+2. Load the Firefox extension into the browser
+3. Open the dashboard interface in the browser
+4. Start archiving images by right-clicking on them on any website
 
 ---
 
-## 🗺 Roadmap (Planlanan)
+## 📌 Project Status
 
-- Daha gelişmiş kategori yönetimi
-- Farklı platformlar için destek
-- Veri yapısının iyileştirilmesi
-- UI/UX geliştirmeleri
-- Performans optimizasyonları
+This project is currently in the **Beta** stage.
 
----
+- Core features are functional
+- The application is actively usable
+- However:
+  - Some features are still missing
+  - The code structure is open for further improvement
 
-## 🤖 Not
-
-Bu program şu ana kadar **tamamen yapay zeka yardımı ile geliştirilmiştir**.
+The project is under continuous development.
 
 ---
 
-## 📄 Lisans
+## 🗺 Roadmap (Planned)
 
-Bu proje kişisel geliştirme amaçlıdır. Lisans bilgisi ilerleyen sürümlerde eklenecektir.
+- Prompt generator
+- Color palette generator
+- Performance optimizations
+- Data structure improvements
+- Support for additional platforms
+- UI/UX enhancements
 
+---
+
+## 🤖 Note
+
+This project has been developed **entirely with the assistance of artificial intelligence** so far.
+
+---
+
+## 📄 License
+
+This project is intended for personal and non-commercial development purposes.
