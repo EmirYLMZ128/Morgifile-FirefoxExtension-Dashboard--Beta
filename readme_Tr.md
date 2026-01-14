@@ -2,35 +2,35 @@
 
 [🇬🇧 English README](readme.md)
 
-Morifile, web üzerindeki görselleri hızlı ve pratik bir şekilde arşivlemek, kategorize etmek ve yönetmek için geliştirilmiş **Firefox eklentisi + web dashboard** tabanlı bir uygulamadır.
+Morifile, web üzerindeki görselleri hızlı ve verimli bir şekilde arşivlemek, kategorize etmek ve yönetmek için geliştirilmiş **Firefox eklentisi + web dashboard** tabanlı bir uygulamadır.
 
-Proje; bir Firefox eklentisi, yerel çalışan bir Python server ve bu verileri görselleştiren bir dashboard yapısından oluşur.
+Proje; bir Firefox eklentisi, yerel olarak çalışan bir Python server ve bu verileri görselleştiren bir dashboard arayüzünden oluşur.
 
 ---
 
 ## 🚀 Özellikler
 
-- Firefox üzerinden herhangi bir web sitesindeki görsele **sağ tıklayarak kaydetme**
-- Görsellerin **Python local server** aracılığıyla işlenmesi
+- Firefox üzerinden herhangi bir web sitesindeki görseli **sağ tıklayarak kaydetme**
+- Görsellerin **yerel Python server** aracılığıyla işlenmesi
 - Verilerin **JSON formatında** saklanması
-- Dashboard üzerinden:
-  - Kategoriler halinde görsel listeleme
-  - Kategori ekleme / düzenleme / silme
+- Dashboard özellikleri:
+  - Görselleri kategoriler halinde görüntüleme
+  - Kategori oluşturma / düzenleme / silme
   - Görsel silme
-- Basit, merkezi ve kontrol edilebilir bir görsel arşiv sistemi
+- Basit, merkezi ve kontrol edilebilir bir görsel arşivleme sistemi
 
 ---
 
 ## 🧩 Proje Yapısı
 
 - **Firefox Extension**  
-  Web sayfalarındaki görselleri algılar ve seçilen görseli backend'e gönderir.
+  Web sayfalarındaki görselleri algılar ve seçilen görseli backend’e gönderir.
 
 - **Python Local Server**  
-  Eklentiden gelen verileri alır, işler ve JSON veri yapısına kaydeder.
+  Eklentiden gelen verileri alır, işler ve JSON tabanlı veri yapısına kaydeder.
 
 - **Dashboard (Web UI)**  
-  Kaydedilen görselleri kategoriler halinde kullanıcıya sunar ve yönetim imkânı sağlar.
+  Kaydedilen görselleri kategoriler halinde gösterir ve yönetim imkânı sunar.
 
 ---
 
@@ -48,7 +48,7 @@ Proje; bir Firefox eklentisi, yerel çalışan bir Python server ve bu verileri 
 
 > Detaylı kurulum adımları ilerleyen sürümlerde eklenecektir.
 
-1. Python local server'ı çalıştırın
+1. Python local server’ı çalıştırın
 2. Firefox eklentisini tarayıcıya yükleyin
 3. Dashboard arayüzünü tarayıcıdan açın
 4. Web sitelerinde görsellere sağ tıklayarak arşivlemeye başlayın
@@ -60,12 +60,24 @@ Proje; bir Firefox eklentisi, yerel çalışan bir Python server ve bu verileri 
 Bu proje şu anda **Beta** aşamasındadır.
 
 - Temel özellikler çalışmaktadır
-- Aktif olarak kullanılabilmektedir
+- Uygulama aktif olarak kullanılabilmektedir
 - Ancak:
-  - Eksik özellikler bulunmaktadır
-  - Kod yapısı geliştirilmeye açıktır!
+  - Bazı özellikler eksiktir
+  - Kod yapısı geliştirmeye açıktır
 
 Proje sürekli olarak geliştirilmektedir.
+
+---
+
+## 🤝 Katkıda Bulunma
+
+Morifile, açık kaynaklı ve ticari olmayan bir projedir.  
+Özellik geliştirme, UI/UX iyileştirmeleri ve kod kalitesini artırma konularında katkıda bulunmak isteyen gönüllüler memnuniyetle karşılanır.
+
+Katkıda bulunmak için:
+- Repoyu fork’layın
+- `good first issue` etiketli bir issue seçin
+- Pull request açın
 
 ---
 
@@ -82,10 +94,10 @@ Proje sürekli olarak geliştirilmektedir.
 
 ## 🤖 Not
 
-Bu program **şu ana kadar tamamen yapay zeka yardımı ile geliştirilmiştir**.
+Bu proje şu ana kadar **tamamen yapay zeka yardımı ile geliştirilmiştir**.
 
 ---
 
 ## 📄 Lisans
 
-Bu proje kişisel geliştirme amaçlıdır.
+Bu proje kişisel ve ticari olmayan kullanım amaçlıdır.
