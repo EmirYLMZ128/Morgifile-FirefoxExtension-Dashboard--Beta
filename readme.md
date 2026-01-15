@@ -1,8 +1,8 @@
-# Morifile (Beta)
+# Morgifile (Beta)
 
 [🇹🇷 Türkçe README](readme_Tr.md)
 
-Morifile is a **Firefox extension + web dashboard** application developed to quickly and efficiently archive, categorize, and manage images from the web.
+Morgifile is a **Firefox extension + web dashboard** application developed to quickly and efficiently archive, categorize, and manage images from the web.
 
 The project consists of a Firefox extension, a locally running Python server, and a dashboard interface that visualizes and manages the collected data.
 
