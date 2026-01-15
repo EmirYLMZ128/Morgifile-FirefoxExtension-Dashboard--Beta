@@ -71,7 +71,7 @@ Proje sürekli olarak geliştirilmektedir.
 
 ## 🤝 Katkıda Bulunma
 
-Morifile, açık kaynaklı ve ticari olmayan bir projedir.  
+Morgifile, açık kaynaklı ve ticari olmayan bir projedir.  
 Özellik geliştirme, UI/UX iyileştirmeleri ve kod kalitesini artırma konularında katkıda bulunmak isteyen gönüllüler memnuniyetle karşılanır.
 
 Katkıda bulunmak için:
