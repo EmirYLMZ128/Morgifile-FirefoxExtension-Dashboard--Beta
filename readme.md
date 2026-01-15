@@ -6,6 +6,8 @@ Morifile is a **Firefox extension + web dashboard** application developed to qui
 
 The project consists of a Firefox extension, a locally running Python server, and a dashboard interface that visualizes and manages the collected data.
 
+Note: Some parts of the codebase and comments are currently written in Turkish. These will be gradually translated and improved as the project evolves.
+
 ---
 
 ## 🚀 Features
