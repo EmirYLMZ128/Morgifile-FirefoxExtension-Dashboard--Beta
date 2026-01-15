@@ -73,7 +73,7 @@ The project is under continuous development.
 
 ## 🤝 Contributing
 
-Morifile is an open-source, non-commercial project.
+Morgifile is an open-source, non-commercial project.
 Contributors are welcome to help improve features, UI/UX, and code quality.
 
 If you want to contribute:
