@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Mevcut aktif sekmeyi bul
+  // Find the currently active tab.
   chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
-    // Hata kontrolü: Eğer tabs boşsa veya tanımsızsa dur
+    // Error checking: Stop if tabs are empty or undefined.
     if (!tabs || tabs.length === 0) return;
 
     const tab = tabs[0];
@@ -14,20 +14,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     siteNameEl.innerText = hostname;
 
-    // Storage'dan durumu oku
+    // Read the status from Storage.
     chrome.storage.local.get([hostname], (result) => {
       let isDeactivated = result[hostname] === true;
       updateUI(isDeactivated, hostname, statusTextEl, toggleBtn);
     });
 
-    // popup.js içinde buton tıklama kısmını şu şekilde güncelle
+    // Update the button click section in popup.js as follows:
     toggleBtn.onclick = () => {
     chrome.storage.local.get([hostname], (result) => {
         let newState = !result[hostname];
         chrome.storage.local.set({ [hostname]: newState }, () => {
         updateUI(newState, hostname, statusTextEl, toggleBtn);
       
-      // Menüyü anında güncellemesi için background'a haber ver veya sayfayı yenile
+      // Inform the background to update the menu instantly, or refresh the page.
       chrome.tabs.reload(tab.id); 
     });
   });
@@ -37,12 +37,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function updateUI(deactive, hostname, statusTextEl, toggleBtn) {
   if (deactive) {
-    statusTextEl.innerHTML = `MorgiFile <span class="hostname">${hostname}</span> sitesinde <b style="color:#cf6679">devre dışıdır</b>.`;
-    toggleBtn.innerText = "Bu sitede aktif et";
+    statusTextEl.innerHTML = `MorgiFile is <b style="color:#cf6679">deactive</b> on <span class="hostname">${hostname}</span>.`;
+    toggleBtn.innerText = "Activate";
     toggleBtn.className = "btn-active";
   } else {
-    statusTextEl.innerHTML = `MorgiFile <span class="hostname">${hostname}</span> sitesinde <b style="color:#03dac6">aktiftir</b>.`;
-    toggleBtn.innerText = "Bu sitede deaktif et";
+    statusTextEl.innerHTML = `MorgiFile is <b style="color:#03dac6">active</b> on <span class="hostname">${hostname}</span>.`;
+    toggleBtn.innerText = "Deactivate";
     toggleBtn.className = "btn-deactive";
   }
 }
