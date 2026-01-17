@@ -15,7 +15,7 @@ function refreshContextMenu(enabled) {
     if (enabled) {
       chrome.contextMenus.create({
         id: MENU_ID,
-        title: "🔗 MorgiFile'a Ekle",
+        title: "🔗 Add to Morgifile",
         contexts: ["all"]
       });
     }
@@ -54,7 +54,7 @@ chrome.tabs.onUpdated.addListener((tabId, info, tab) => {
 /* INSTALL */
 chrome.runtime.onInstalled.addListener(() => {
   refreshContextMenu(true);
-  // ❌ Bildirim yok
+  // ❌ No notification
 });
 
 /* CONTEXT MENU */

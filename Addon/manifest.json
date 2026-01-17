@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "MorgiFile",
-  "description": "Görselleri kolayca kaydet ve kategorize et.",
+  "description": "Easily save and categorize images.",
   "version": "1.0",
 
   "icons": {
