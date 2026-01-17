@@ -3,7 +3,7 @@
 // =====================
 chrome.storage.local.get([window.location.hostname], (res) => {
   if (res[window.location.hostname] === true) {
-    console.log("MorgiFile bu sitede deaktif.");
+    console.log("Morgifile is Deactive on this site");
     return;
   }
   mainEklentiKodlari();
@@ -79,7 +79,7 @@ function showInitialPicker(images) {
   const modal = document.createElement("div");
   modal.className = "picker-modal";
   modal.innerHTML = `
-    <h2 style="color:#fff;text-align:center;">Hangi Görseli Kaydetmek İstersiniz?</h2>
+    <h2 style="color:#fff;text-align:center;">Select an image to save</h2>
     <div class="grid"></div>
   `;
 
@@ -99,7 +99,7 @@ function showInitialPicker(images) {
 
     item.innerHTML = `
       <img src="${imgData.url}">
-      <span class="img-resolution">Yükleniyor...</span>
+      <span class="img-resolution">Loading...</span>
     `;
 
     item.onclick = () => {
@@ -118,7 +118,7 @@ function showInitialPicker(images) {
 // =====================
 async function showCategoryModal(imgUrl) {
 
-  // 🚀 BURASI KRİTİK: Her açılışta eski listeyi unut ki taze liste çekilsin
+  // 🚀 THIS IS CRITICAL: At each launch, forget the old list so a fresh one can be drawn up.
   categoryCache = null;
 
   const { host, shadow, overlay } = createShadowHost("morgi-main-host");
@@ -136,29 +136,29 @@ function buildModalHTML(imgUrl, siteAddress) {
     <div class="left"><img src="${imgUrl}"></div>
     <div class="right">
       <div>
-        <h2>🐾 MorgiFile Detayları</h2>
+        <h2>MorgiFile Details</h2>
         <div class="info-row">
-          <label>Görselin Adresi</label>
+          <label>Image Link</label>
           <a href="${imgUrl}" target="_blank" class="info-link">${imgUrl.substring(
     0,
     45
   )}...</a>
         </div>
         <div class="info-row">
-          <label>Görselin Boyutları</label>
-          <div class="info-val" id="radar-res-val">Yükleniyor...</div>
+          <label>Image Sizes</label>
+          <div class="info-val" id="radar-res-val">Loading...</div>
         </div>
         <div class="info-row">
-          <label>Site Adresi</label>
+          <label>Site Link</label>
           <div class="info-val">${siteAddress}</div>
         </div>
-        <label>Koleksiyon / Kategori</label>
+        <label>Category</label>
         <div class="custom-select-wrapper">
-          <div class="custom-select" id="radar-trigger">Bir kategori seçin...</div>
+          <div class="custom-select" id="radar-trigger">Select a category...</div>
           <div class="custom-options" id="radar-options"></div>
         </div>
       </div>
-      <button id="save-btn">Kategori Seçin</button>
+      <button id="save-btn">Save</button>
     </div>
   `;
   return modal;
@@ -181,8 +181,11 @@ async function setupModalLogic(shadow, host, imgUrl) {
 
   const categories = await loadCategories();
   categories.forEach((cat) => {
-    // 🛡️ KORUMA: Eğer kategori ismi buysa, listeye ekleme (atla)
-    if (cat.name === "Kategorize Edilmemiş Favoriler") {
+    // This is a system-reserved fallback category.
+    // Currently filtered by name.
+    // In the future, this should be identified using a dedicated flag
+    // Or use category metadata (e.g. system, visible flags) instead of a hardcoded name.
+    if (cat.name === "Uncategorized Favorites") {
       return; 
     }
 
@@ -193,7 +196,7 @@ async function setupModalLogic(shadow, host, imgUrl) {
       e.stopPropagation();
       trigger.innerText = cat.name;
       optionsMenu.classList.remove("show");
-      btn.innerText = `💾 ${cat.name} Kategorisine Ekle`;
+      btn.innerText = `💾 Save On ${cat.name}`;
       btn.classList.add("active");
       btn.dataset.category = cat.name;
     };
@@ -219,7 +222,7 @@ async function handleSave(btn, shadow, host, imgUrl) {
   // 🔒 DUPLICATE CHECK (SERVER'A GİTMEDEN)
   const exists = await isImageAlreadySaved(imgUrl);
   if (exists) {
-    showInlineMessage("⚠️ Bu görsel zaten kaydedilmiş");
+    showInlineMessage("⚠️ This image has already been added to your archive");
     return;
   }
 
@@ -237,7 +240,7 @@ async function handleSave(btn, shadow, host, imgUrl) {
     height
   };
 
-  btn.innerText = "⏳ Kaydediliyor...";
+  btn.innerText = "⏳ Saving...";
   btn.classList.remove("active");
   btn.style.background = "#4b4b4b";
 
@@ -249,18 +252,18 @@ async function handleSave(btn, shadow, host, imgUrl) {
     });
 
     if (res.ok) {
-      // ✅ BAŞARILI → LOCAL'E İŞARETLE
+      // ✅ Success 
       markImageAsSaved(imgUrl);
 
-      btn.innerText = "✅ Başarıyla Kaydedildi!";
+      btn.innerText = "✅ Saved successfully!!";
       btn.style.background = "#10b981";
       setTimeout(() => host.remove(), 1200);
     } else {
-      btn.innerText = "❌ Hata Oluştu!";
+      btn.innerText = "❌ Error!";
       btn.style.background = "#ef4444";
     }
   } catch {
-    btn.innerText = "📡 Bağlantı Yok!";
+    btn.innerText = "📡 No connection!";
     btn.style.background = "#ef4444";
   }
 }
@@ -285,7 +288,7 @@ async function loadCategories() {
     categoryCache = data.categories;
   } catch {
 
-    categoryCache = [{ name: "Genel"}];
+    categoryCache = [{ name: "Fallback"}];
 
   }
 
@@ -295,6 +298,12 @@ async function loadCategories() {
 // =====================
 // DUPLICATE CHECK (LOCAL)
 // =====================
+
+// Note:
+// savedImages is a local cache used to prevent duplicate saves.
+// If an image is removed from the dashboard, this cache is not synced.
+// This may be improved in future versions. 
+
 function isImageAlreadySaved(url) {
   return new Promise((resolve) => {
     chrome.storage.local.get(["savedImages"], (res) => {
@@ -359,13 +368,12 @@ chrome.runtime.onMessage.addListener((msg) => {
   );
   const images = findBestImages(lastX, lastY);
 
-  // 👇 TAM OLARAK BURASI
   if (!images.length) {
-    showInlineMessage("Bu noktada görsel bulunamadı");
+    showInlineMessage("Image not found");
     return;
   }
 
-  // buradan sonra modal / picker / save akışı
+  // Modal / picker / save flow starts here
   if (images.length === 1) {
     showCategoryModal(images[0].url);
   } else {
@@ -397,8 +405,11 @@ function showInlineMessage(text) {
 // =====================
 // STYLES (UNCHANGED)
 // =====================
+
+// they can be moved to a separate file (e.g., modal.css) and 
+// injected via the content script.
 const STYLES = `
-/* Menü konteynerinin kendisi (opsiyonel ama daha temiz durur) */
+
 .custom-options {
     position: absolute;
     top: 100%;
@@ -406,20 +417,18 @@ const STYLES = `
     right: 0;
     background: #252525;
     border: 1px solid #333;
-    border-radius: 10px; /* Ana çerçeve yuvarlağı */
+    border-radius: 10px;
     display: none;
     z-index: 100;
     box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    overflow: hidden; /* İçerideki çocukların taşmasını engeller, radiusu korur */
+    overflow: hidden; 
 }
 
-/* İlk seçeneğin üst köşelerini yuvarla */
 .custom-option:first-child {
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-/* Son seçeneğin alt köşelerini yuvarla ve alt çizgiyi kaldır */
 .custom-option:last-child {
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
@@ -427,8 +436,8 @@ const STYLES = `
 }
 
 .custom-options {
-    max-height: 250px; /* Çok fazla kategori varsa kutu devleşmesin */
-    overflow-y: auto;  /* Kaydırma çubuğu çıksın */
+    max-height: 250px;
+    overflow-y: auto;
 }
 
 .radar-overlay {
