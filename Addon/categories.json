@@ -1,16 +1,17 @@
 {
     "categories": [
         {
-            "name": "Kategorize Edilmemiş Favoriler"
+            "name": "Uncategorized Favorites",
+            "description": "Hidden by default. Used only when a favorite image loses its original category."
         },
         {
-            "name": "Social Media Post Design"
+            "name": "Cat1"
         },
         {
-            "name": "Posters"
+            "name": "Cat2"
         },
         {
-            "name": "Ads"
+            "name": "Cat3"
         }
     ]
 }
