@@ -1,10 +1,12 @@
-# Morifile (Beta)
+# Morgifile (Beta)
 
-[🇹🇷 Türkçe README](README_TR.md)
+[🇹🇷 Türkçe README](readme_Tr.md)
 
-Morifile is a **Firefox extension + web dashboard** application developed to quickly and efficiently archive, categorize, and manage images from the web.
+Morgifile is a **Firefox extension + web dashboard** application developed to quickly and efficiently archive, categorize, and manage images from the web.
 
 The project consists of a Firefox extension, a locally running Python server, and a dashboard interface that visualizes and manages the collected data.
+
+Note: Some parts of the codebase and comments are currently written in Turkish. These will be gradually translated and improved as the project evolves.
 
 ---
 
@@ -69,6 +71,18 @@ The project is under continuous development.
 
 ---
 
+## 🤝 Contributing
+
+Morgifile is an open-source, non-commercial project.
+Contributors are welcome to help improve features, UI/UX, and code quality.
+
+If you want to contribute:
+- Fork the repository
+- Pick an issue labeled `good first issue`
+- Open a pull request
+
+---
+
 ## 🗺 Roadmap (Planned)
 
 - Prompt generator
@@ -76,19 +90,7 @@ The project is under continuous development.
 - Performance optimizations
 - Data structure improvements
 - Support for additional platforms
-- UI/UX enhancements
-
----
-
-## 🤝 Contributing
-
-Morifile is an open-source, non-commercial project.
-Contributors are welcome to help improve features, UI/UX, and code quality.
-
-If you want to contribute:
-- Fork the repository
-- Pick an issue labeled `good first issue`
-- Open a pull request
+- UI/UX enhancemen
 
 ---
 
